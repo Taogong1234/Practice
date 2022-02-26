@@ -5,11 +5,12 @@ import numpy as np
 data1 = np.loadtxt('/home/taogang/desk/Practice/convection/outfx.dat')
 data2 = np.loadtxt('/home/taogang/desk/Practice/convection/outgx.dat')
 fig,ax=plt.subplots(figsize=(10,5),dpi=100)
-xdata=np.linspace(0,15,151)
+xdata1=np.linspace(0,15,151)
+xdata2=np.linspace(0,15,301)
 ydata1=data1[0,:]
 ydata2=data2[0,:]
-line1,=ax.plot(xdata,ydata1,lw=2, label='Computational')
-line2,=ax.plot(xdata,ydata2,lw=3, label='Analytical')
+line1,=ax.plot(xdata1,ydata1,lw=2, label='Computational')
+line2,=ax.plot(xdata2,ydata2,lw=3, label='Analytical')
 
 def init():
     plt.xlim(-1,16)
@@ -29,5 +30,5 @@ def upgrade(i):
     
 ani=animation.FuncAnimation(fig=fig,func=upgrade,frames=301,init_func=init,interval=20,blit=False)
 # ani.save('666.gif',writer='pillow')
-ani.save('666.mp4')
+ani.save('/home/taogang/desk/Practice/convection/666.mp4')
 plt.show()
