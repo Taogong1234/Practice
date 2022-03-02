@@ -1,7 +1,7 @@
 run:
-	gfortran Burgers.f90 -o Burgers.exe 
-	./Burgers.exe
-	python painter.py
+	mpif90 Burgers.f90 -o Burgers.exe 
+	mpirun -n 6 ./Burgers.exe
+	python painter.py 
 
 .PHONY:clean
 clean: 

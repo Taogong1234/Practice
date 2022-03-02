@@ -1,6 +1,6 @@
 run:
-	gfortran zalesak.f90 -o zalesak.exe 
-	./zalesak.exe
+	mpif90 zalesak.f90 -o zalesak.exe 
+	mpirun -n 5 ./zalesak.exe
 	python painter.py
 
 .PHONY:clean
