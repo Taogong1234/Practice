@@ -122,6 +122,7 @@ program main
     end if 
     tag1=3 
     tag2=4 
+    
     do n=1,steps 
         call MPI_SENDRECV(A(1,mysize+1),totalsize,MPI_REAL,right,tag1,& 
                     A(1,1),totalsize,MPI_REAL,left,tag1,MPI_COMM_WORLD,status,ierr) 
@@ -153,7 +154,16 @@ program main
 end program
 
 
-!小练习，主要用于了解语法，算法有瑕疵。(对等模式,虚拟进程，捆绑发送接收mpi_sendrecv)
+!小练习，主要用于了解语法，算法有瑕疵。(对等模式,虚拟进程，捆绑发送接收mpi_sendr虚拟进程，捆绑发送接收mpi_sendrecvecv)
+! program main
+!     use mpi
+!     implicit none捆绑发送接收mpi_sendrecv)
+! program main
+!     use mpi
+!     implicit none绑发送接收mpi_sendrecv)
+! program main
+!     use mpi
+!     implicit none捆绑发送接收mpi_sendrecv)
 ! program main
 !     use mpi
 !     implicit none
